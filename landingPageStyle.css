@@ -1,0 +1,210 @@
+html {
+  height: 100%;
+  border: 2px solid black;
+}
+
+#boxx{
+  position: absolute;
+  display: flex;
+  justify-content:center;
+  margin-bottom: 0%;
+  margin-top: 630px;
+}
+
+
+header {
+  position: absolute;
+  left: 15px;
+  top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+#myName {
+  position: absolute;
+  top: 19px;
+  font-family: sans-serif;
+  font-size: 25px;
+  width: 280px;
+  left: 110px;
+}
+
+#img {
+  width: 100px;
+  height: 100px;
+}
+
+body {
+  background-color: royalblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+#box {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  font-family: sans-serif;
+  background-color: lightskyblue;
+  border-radius: 10px;
+  height: 50px;
+  width: 90px;
+  font-size: x-large;
+}
+
+button:hover{
+  font-size: 30px;
+}
+
+button a {
+  text-decoration: none;
+}
+
+#title {
+  font-family: sans-serif;
+  font-size: 70px;
+  border-bottom: 10px lightskyblue dotted;
+  border-top: 10px lightskyblue dotted;
+}
+
+#yin-yang-box {
+  display: flex;
+  justify-content: center;
+}
+@keyframes spin {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+@-moz-keyframes spin {
+  0% { -moz-transform: rotate(360deg); }
+  100% { -moz-transform: rotate(0deg); }
+}
+@-webkit-keyframes spin {
+  0% {-webkit-transform: rotate(360deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
+@-o-keyframes spin {
+  0% { -o-transform: rotate(360deg); }
+  100% { -o-transform: rotate(0deg); }
+}
+.spin {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px 50px 50px 50px;
+  overflow: hidden;
+  margin-left: -50px;
+  margin-top: -50px;
+  top: 50%;
+  left: 50%;
+  /* position: absolute; */
+  /* position: relative; */
+  animation: spin 2s linear 0s infinite reverse;
+  -moz-animation: 2s linear 0s reverse none infinite spin;
+  -webkit-animation: spin 2s linear 0s infinite reverse;
+  -o-animation: spin 2s linear 0s infinite reverse;
+  -webkit-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.spin:hover {
+  -webkit-animation-play-state: running;
+  -o-animation-play-state: running;
+  -moz-animation-play-state: running;
+  animation-play-state: running;
+}
+
+
+
+#yin-yang {
+  animation: spin 4s linear 0s infinite normal;
+  -moz-animation: 4s linear 0s normal none infinite spin;
+  -webkit-animation: spin 4s linear 0s infinite normal;
+  -o-animation: spin 4s linear 0s infinite normal;
+  width: 96px;
+  box-sizing: content-box;
+  height: 48px;
+  background: #eee;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px 2px 50px 2px;
+  border-radius: 100%;
+  position: relative;
+}
+#yin-yang:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #eee;
+  border: 18px solid black;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  box-sizing: content-box;
+}
+#yin-yang:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: black;
+  border: 18px solid #eee;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  box-sizing: content-box;
+}
+
+#cross {
+  background: black;
+  height: 100px;
+  position: relative;
+  width: 20px;
+  transform: rotate(45deg);
+}
+#cross:after {
+  background: black;
+  content: "";
+  height: 20px;
+  left: -40px;
+  position: absolute;
+  top: 40px;
+  width: 100px;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle1 {
+  width: 80px;
+  height: 80px;
+  background: lightskyblue;
+  border-radius: 50%;
+}
+
+#x-o {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+}

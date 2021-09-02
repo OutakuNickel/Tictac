@@ -1,0 +1,218 @@
+/* * - star means everypart of the html code meaning before the 
+code it will have a border box and after the code it will have a border box too */
+*,
+*::after *::before {
+  box-sizing: border-box;
+}
+
+/* It makes it to use the whole entire screen not a single space */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: lightcoral;
+}
+
+/* This is a huge div that contains the whole entire board like everything */
+.board {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  grid-template-columns: repeat(9, auto);
+}
+
+/* This is the squares boxes */
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid crimson;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+/* This whole entire nth:child will choose the square boxes a by itself like only 1 */
+
+.cell:nth-child(9n + 1) {
+  border-left: none;
+}
+
+.cell:nth-child(9n + 9) {
+  border-right: none;
+}
+
+.cell:nth-child(9) {
+  border-top: none;
+}
+
+.cell:nth-child(1) {
+  border-top: none;
+}
+
+.cell:nth-child(2) {
+  border-top: none;
+}
+
+.cell:nth-child(3) {
+  border-top: none;
+}
+
+.cell:nth-child(4) {
+  border-top: none;
+}
+
+.cell:nth-child(5) {
+  border-top: none;
+}
+
+.cell:nth-child(6) {
+  border-top: none;
+}
+
+.cell:nth-child(7) {
+  border-top: none;
+}
+
+.cell:nth-child(8) {
+  border-top: none;
+}
+
+.cell:nth-child(73) {
+  border-bottom: none;
+}
+
+.cell:nth-child(74) {
+  border-bottom: none;
+}
+
+.cell:nth-child(75) {
+  border-bottom: none;
+}
+
+.cell:nth-child(76) {
+  border-bottom: none;
+}
+
+.cell:nth-child(77) {
+  border-bottom: none;
+}
+
+.cell:nth-child(78) {
+  border-bottom: none;
+}
+
+.cell:nth-child(79) {
+  border-bottom: none;
+}
+
+.cell:nth-child(80) {
+  border-bottom: none;
+}
+
+.cell:nth-child(81) {
+  border-bottom: none;
+}
+
+/* This is gonna put after and before the code like the main after and before shape is gonna have 
+different color while the hover is gonna have another color light grey before clicking into the square, 
+since the x is all black you need after and before, while the circle rim is only black so 
+just before since it before the white circle inside  */
+.cell.circle::before,
+.cell.x::after,
+.cell.x::before {
+  background-color: crimson;
+}
+
+/* This is the color of the shape too */
+/* This means if it is not circle or x it will put x or circle but since 
+we could put x or circle inside board because it is containing the board */
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+  background-color: white;
+}
+
+/* This is the shape of the shape */
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 50px;
+}
+
+/* Still the shape of the shape for x rotating after x to 45 deg*/
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before {
+  transform: rotate(-45deg);
+}
+
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  transform: rotate(45deg);
+}
+
+/* Still the same for it shape */
+.cell.circle::before,
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  height: 50px;
+  width: 50px;
+}
+
+/* Since this is the different circle it is gonna have color to have same color with background */
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  background-color: lightcoral;
+  height: 38px;
+  width: 38px;
+}
+
+/*  */
+
+.winning-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rbga(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  color: crimson;
+  background-color: lightcoral;
+  font-size: 5rem;
+  flex-direction: column;
+}
+.winning-message button {
+  font-size: 3rem;
+  background-color: crimson;
+  border: 1px solid lightcoral;
+  color: lightcoral;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+}
+.winning-message button:hover {
+  background-color: lightcoral;
+  border-color: crimson;
+  color: crimson;
+}
+.winning-message.show {
+  display: flex;
+}
